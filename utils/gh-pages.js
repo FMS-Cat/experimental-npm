@@ -8,7 +8,7 @@ ghPages.publish( path.resolve( __dirname, '..' ), {
   src: [
     'docs/**/*',
     'examples/**/*',
-    'lib/**/*',
+    'dist/**/*',
   ],
   message: `gh-pages v${ version } [ci skip]`
 }, ( error ) => {
