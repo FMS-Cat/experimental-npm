@@ -135,6 +135,13 @@ workflows:
                 - master
 
   nightly:
+    triggers:
+      - schedule:
+          cron: "20 4 * * *"
+          filters:
+            branches:
+              only:
+                - dev
     jobs:
       - fetch
       - build:
