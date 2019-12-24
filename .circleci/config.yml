@@ -31,6 +31,7 @@ jobs:
   build:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/workspace
       - run:
@@ -49,6 +50,7 @@ jobs:
   lint:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/workspace
       - run:
@@ -58,6 +60,7 @@ jobs:
   artifacts:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/workspace
       - store_artifacts:
@@ -72,6 +75,7 @@ jobs:
   deploy-master:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/workspace
       - run:
@@ -84,6 +88,7 @@ jobs:
   deploy-nightly:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/workspace
       - run:
@@ -99,6 +104,7 @@ jobs:
   gh-pages:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/workspace
       - run:
@@ -135,13 +141,6 @@ workflows:
                 - master
 
   nightly:
-    triggers:
-      - schedule:
-          cron: "20 4 * * *"
-          filters:
-            branches:
-              only:
-                - dev
     jobs:
       - fetch
       - build:
