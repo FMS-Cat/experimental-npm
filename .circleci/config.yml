@@ -88,6 +88,19 @@ jobs:
           name: Publish
           command: npm publish --tag latest
 
+  nightly-condition
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/workspace
+      - run:
+          name: Condition
+          command: |
+            if [ "$(git log --since=midnight)" == "" ]; then
+              echo "It seems we don't have to deploy our nightly for today..."; exit 1
+            fi
+
   deploy-nightly:
     <<: *defaults
     steps:
@@ -149,15 +162,17 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "20 4 * * *"
+          cron: "0 0 * * *"
           filters:
             branches:
               only:
                 - dev
     jobs:
+      - nightly-condition
       - fetch
       - build:
           requires:
+            - nightly-condition
             - fetch
       - artifacts:
           requires:
