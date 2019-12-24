@@ -88,14 +88,14 @@ jobs:
           name: Publish
           command: npm publish --tag latest
 
-  nightly-condition
+  nightly-condition:
     <<: *defaults
     steps:
       - checkout
       - attach_workspace:
           at: ~/workspace
       - run:
-          name: Condition
+          name: See whether we should deploy today's nightly or not
           command: |
             if [ "$(git log --since=midnight)" == "" ]; then
               echo "It seems we don't have to deploy our nightly for today..."; exit 1
