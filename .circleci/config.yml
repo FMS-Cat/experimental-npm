@@ -97,7 +97,7 @@ jobs:
       - run:
           name: See whether we should deploy today's nightly or not
           command: |
-            if [ "$(git log --since=midnight)" == "" ]; then
+            if [ "$(git log --since=yesterday)" == "" ]; then
               echo "It seems we don't have to deploy our nightly for today..."; exit 1
             fi
 
