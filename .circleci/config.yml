@@ -123,23 +123,21 @@ workflows:
           requires:
             - build
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              ignore: /.*/
+              only:
+                - master
       - gh-pages:
           requires:
             - build
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              ignore: /.*/
+              only:
+                - master
 
   nightly:
     triggers:
       - schedule:
-          cron: "4 20 * * *"
+          cron: "20 4 * * *"
           filters:
             branches:
               only:
