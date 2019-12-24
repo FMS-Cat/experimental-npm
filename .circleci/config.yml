@@ -124,7 +124,7 @@ workflows:
             - build
           filters:
             tags:
-              only: /^v[0-9](\.[0-9]){2}$/
+              only: /^v.*/
             branches:
               ignore: /.*/
       - gh-pages:
@@ -132,7 +132,7 @@ workflows:
             - build
           filters:
             tags:
-              only: /^v[0-9](\.[0-9]){2}$/
+              only: /^v.*/
             branches:
               ignore: /.*/
 
