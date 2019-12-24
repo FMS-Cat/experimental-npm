@@ -1,9 +1,15 @@
 {
   "name": "@fms-cat/experimental",
   "description": "Experimental edition of FMS_Cat",
+  "author": "FMS_Cat",
   "version": "0.0.1",
   "main": "dist/index.js",
   "license": "MIT",
+  "files": [
+    "dist",
+    "types",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --hot --mode development",
     "all": "yarn lint && yarn clean && yarn build && yarn types && yarn docs",
