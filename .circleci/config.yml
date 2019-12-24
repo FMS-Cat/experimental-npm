@@ -39,7 +39,7 @@ jobs:
           name: Types
           command: yarn types
       - store_artifacts:
-          path: lib
+          path: dist
       - store_artifacts:
           path: types
       - store_artifacts:
