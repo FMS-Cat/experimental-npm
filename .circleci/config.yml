@@ -116,13 +116,9 @@ workflows:
       - lint:
           requires:
             - fetch
-      - docs:
-          requires:
-            - fetch
       - artifacts:
           requires:
             - build
-            - docs
       - deploy-master:
           filters:
             tags:
@@ -131,7 +127,6 @@ workflows:
               ignore: /.*/
           requires:
             - build
-            - docs
       - gh-pages:
           filters:
             tags:
@@ -140,7 +135,6 @@ workflows:
               ignore: /.*/
           requires:
             - build
-            - docs
 
   nightly:
     triggers:
@@ -155,14 +149,9 @@ workflows:
       - build:
           requires:
             - fetch
-      - docs:
-          requires:
-            - fetch
       - artifacts:
           requires:
             - build
-            - docs
       - deploy-nightly:
           requires:
             - build
-            - docs
