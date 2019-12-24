@@ -99,7 +99,7 @@ jobs:
           command: |
             git config user.email "email@example.com"
             git config user.name "FMS-Cat (CircleCI)"
-            npm version $(node ./utils/push-nightly-tag.js)
+            npm version $(node ./utils/gen-nightly-version.js)
       - run:
           name: Publish
           command: npm publish
