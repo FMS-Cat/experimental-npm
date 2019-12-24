@@ -1,0 +1,90 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:13.3.0
+
+jobs:
+  fetch:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "yarn.lock" }}
+            - deps-
+      - run:
+          name: Node version
+          command: node -v
+      - run:
+          name: Fetch deps
+          command: yarn
+      - save_cache:
+          key: deps-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "yarn.lock" }}
+            - deps-
+      - run:
+          name: Build
+          command: yarn build
+      - run:
+          name: Types
+          command: yarn types
+      - store_artifacts:
+          path: lib
+      - store_artifacts:
+          path: types
+      - store_artifacts:
+          path: examples
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "yarn.lock" }}
+            - deps-
+      - run:
+          name: Lint
+          command: yarn lint
+
+  docs:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "yarn.lock" }}
+            - deps-
+      - run:
+          name: Docs
+          command: yarn docs
+      - store_artifacts:
+          path: docs
+
+workflows:
+  version: 2
+  inspection:
+    jobs:
+      - fetch
+      - build:
+          requires:
+            - fetch
+      - lint:
+          requires:
+            - fetch
+      - docs:
+          requires:
+            - fetch

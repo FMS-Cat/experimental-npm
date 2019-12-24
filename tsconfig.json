@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2018", "dom"],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true
+  },
+  "include": [ "src/**/*" ],
+  "exclude": [ "node_modules" ]
+}
