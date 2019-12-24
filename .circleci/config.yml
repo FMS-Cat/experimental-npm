@@ -96,7 +96,10 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/workspace/.npmrc
       - run:
           name: Version
-          command: npm version $(node ./utils/push-nightly-tag.js)
+          command: |
+            git config user.email "email@example.com"
+            git config user.name "FMS-Cat (CircleCI)"
+            npm version $(node ./utils/push-nightly-tag.js)
       - run:
           name: Publish
           command: npm publish
