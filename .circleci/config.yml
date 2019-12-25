@@ -111,6 +111,11 @@ jobs:
           name: Auth
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/workspace/.npmrc
       - run:
+          name: Configure Git
+          command: |
+            git config user.email $GIT_AUTHOR_EMAIL
+            git config user.name $GIT_AUTHOR_NAME
+      - run:
           name: Version
           command: npm version $(node ./utils/gen-nightly-version.js)
       - run:
@@ -124,11 +129,13 @@ jobs:
       - attach_workspace:
           at: ~/workspace
       - run:
-          name: Push to gh-pages
+          name: Configure Git
           command: |
             git config user.email $GIT_AUTHOR_EMAIL
             git config user.name $GIT_AUTHOR_NAME
-            yarn gh-pages
+      - run:
+          name: Push to gh-pages
+          command: yarn gh-pages
 
 workflows:
   version: 2
