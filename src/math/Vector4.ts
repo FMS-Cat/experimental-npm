@@ -8,7 +8,7 @@ export type rawVector4 = [ number, number, number, number ];
 export class Vector4 extends Vector<Vector4> {
   public elements: rawVector4;
 
-  public constructor( v: rawVector4 ) {
+  public constructor( v: rawVector4 = [ 0.0, 0.0, 0.0, 0.0 ] ) {
     super();
     this.elements = v;
   }
