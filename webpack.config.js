@@ -20,7 +20,7 @@ https://github.com/FMS-Cat/experimental/blob/master/LICENSE`;
     entry: path.resolve( __dirname, 'src', 'index.ts' ),
     output: {
       path: path.resolve( __dirname, 'dist' ),
-      filename: 'fms-cat-experimental.js',
+      filename: isProd ? 'fms-cat-experimental.js' : 'fms-cat-experimental.dev.js',
       library: 'FMS_CAT_EXPERIMENTAL',
       libraryTarget: 'umd',
       globalObject: 'this',

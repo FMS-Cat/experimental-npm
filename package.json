@@ -13,11 +13,13 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server --hot --mode development",
-    "all": "yarn lint && yarn clean && yarn build && yarn types && yarn docs",
+    "all": "yarn lint && yarn clean && yarn build && yarn docs",
     "clean": "rimraf dist docs types",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "build": "webpack --mode production",
-    "types": "tsc --emitDeclarationOnly",
+    "build": "yarn build-dev && yarn build-prod && yarn build-types",
+    "build-dev": "webpack --mode production",
+    "build-prod": "webpack --mode production",
+    "build-types": "tsc --emitDeclarationOnly",
     "docs": "typedoc --out docs --mode file --excludeNotExported",
     "gh-pages": "node ./utils/gh-pages.js"
   },
