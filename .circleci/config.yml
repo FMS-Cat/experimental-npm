@@ -176,10 +176,11 @@ workflows:
                 - dev
     jobs:
       - nightly-condition
-      - fetch
-      - build:
+      - fetch:
           requires:
             - nightly-condition
+      - build:
+          requires:
             - fetch
       - artifacts:
           requires:
