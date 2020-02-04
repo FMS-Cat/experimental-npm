@@ -1,5 +1,3 @@
-export * from './CDS';
-export * from './ExpSmooth';
 export * from './Matrix4';
 export * from './Quaternion';
 export * from './Vector';
