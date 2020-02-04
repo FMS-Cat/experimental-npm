@@ -42,6 +42,10 @@ export class Quaternion {
     return this.elements[ 3 ];
   }
 
+  public toString(): string {
+    return `Quaternion( ${ this.x.toFixed( 3 ), this.y.toFixed( 3 ), this.z.toFixed( 3 ), this.w.toFixed( 3 ) } )`;
+  }
+
   /**
    * Clone this.
    */

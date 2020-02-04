@@ -97,6 +97,18 @@ export class Matrix4 {
     ].map( ( v ) => v * invDet ) as rawMatrix4 );
   }
 
+  public toString(): string {
+    const m = this.elements;
+    let str = '';
+
+    for ( let iy = 0; iy < 4; iy ++ ) {
+      for ( let ix = 0; ix < 4; ix ++ ) {
+        str += `${ m[ ix * 4 + iy ].toFixed( 3 ) }${ ix === 3 ? ';' : ',' } `;
+      }
+    }
+    return `Matrix4( ${ str })`;
+  }
+
   /**
    * Clone this.
    */

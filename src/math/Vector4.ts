@@ -57,6 +57,10 @@ export class Vector4 extends Vector<Vector4> {
     this.elements[ 3 ] = z;
   }
 
+  public toString(): string {
+    return `Vector4( ${ this.x.toFixed( 3 ), this.y.toFixed( 3 ), this.z.toFixed( 3 ), this.w.toFixed( 3 ) } )`;
+  }
+
   /**
    * Multiply this vector (with an implicit 1 in the 4th dimension) by m.
    */
