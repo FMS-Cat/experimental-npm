@@ -36,11 +36,11 @@ export class Clock {
 
   /**
    * Update the clock.
-   * @param time Time. You need to set manually
+   * @param time Time. You need to set manually when you are using manual Clock
    */
-  public update( time: number ): void {
+  public update( time?: number ): void {
     const prevTime = this.__time;
-    this.__time = time;
+    this.__time = time || 0.0;
     this.__deltaTime = this.__time - prevTime;
   }
 
