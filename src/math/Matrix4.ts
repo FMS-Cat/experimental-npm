@@ -99,14 +99,7 @@ export class Matrix4 {
 
   public toString(): string {
     const m = this.elements;
-    let str = '';
-
-    for ( let iy = 0; iy < 4; iy ++ ) {
-      for ( let ix = 0; ix < 4; ix ++ ) {
-        str += `${ m[ ix * 4 + iy ].toFixed( 3 ) }${ ix === 3 ? ';' : ',' } `;
-      }
-    }
-    return `Matrix4( ${ str })`;
+    return `Matrix4( ${ m[ 0 ] }, ${ m[ 4 ] }, ${ m[ 8 ] }, ${ m[ 12 ] }; ${ m[ 1 ] }, ${ m[ 5 ] }, ${ m[ 9 ] }, ${ m[ 13 ] }; ${ m[ 2 ] }, ${ m[ 6 ] }, ${ m[ 10 ] }, ${ m[ 14 ] }; ${ m[ 3 ] }, ${ m[ 7 ] }, ${ m[ 11 ] }, ${ m[ 15 ] } )`;
   }
 
   /**

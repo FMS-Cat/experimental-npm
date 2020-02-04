@@ -58,7 +58,7 @@ export class Vector4 extends Vector<Vector4> {
   }
 
   public toString(): string {
-    return `Vector4( ${ this.x.toFixed( 3 ), this.y.toFixed( 3 ), this.z.toFixed( 3 ), this.w.toFixed( 3 ) } )`;
+    return `Vector4( ${ this.x.toFixed( 3 ) }, ${ this.y.toFixed( 3 ) }, ${ this.z.toFixed( 3 ) }, ${ this.w.toFixed( 3 ) } )`;
   }
 
   /**
