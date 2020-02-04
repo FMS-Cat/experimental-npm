@@ -4,6 +4,7 @@
   "author": "FMS_Cat",
   "version": "0.1.3",
   "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "license": "MIT",
   "files": [
     "dist",
