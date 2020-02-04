@@ -74,4 +74,18 @@ export class Vector4 extends Vector<Vector4> {
   protected __new( v: rawVector4 ): Vector4 {
     return new Vector4( v );
   }
+
+  /**
+   * Vector4( 0.0, 0.0, 0.0, 0.0 )
+   */
+  public static get zero(): Vector4 {
+    return new Vector4( [ 0.0, 0.0, 0.0, 0.0 ] );
+  }
+
+  /**
+   * Vector4( 1.0, 1.0, 1.0, 1.0 )
+   */
+  public static get one(): Vector4 {
+    return new Vector4( [ 1.0, 1.0, 1.0, 1.0 ] );
+  }
 }

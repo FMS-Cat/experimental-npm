@@ -91,6 +91,13 @@ export class Quaternion {
   }
 
   /**
+   * An identity Quaternion.
+   */
+  public static get identity(): Quaternion {
+    return new Quaternion( rawIdentityQuaternion );
+  }
+
+  /**
    * Generate a Quaternion out of angle and axis.
    */
   public static fromAxisAngle( axis: Vector3, angle: number ): Quaternion {
