@@ -55,7 +55,7 @@ export class Matrix4 {
       b08 = a20 * a33 - a23 * a30,  b09 = a21 * a32 - a22 * a31,
       b10 = a21 * a33 - a23 * a31,  b11 = a22 * a33 - a23 * a32;
 
-    const det = 1.0 / b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
+    const invDet = 1.0 / b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
 
     return new Matrix4( [
       a11 * b11 - a12 * b10 + a13 * b09,
@@ -74,7 +74,7 @@ export class Matrix4 {
       a00 * b09 - a01 * b07 + a02 * b06,
       a31 * b01 - a30 * b03 - a32 * b00,
       a20 * b03 - a21 * b01 + a22 * b00
-    ].map( ( v ) => v * det ) as rawMatrix4 );
+    ].map( ( v ) => v * invDet ) as rawMatrix4 );
   }
 
   /**
