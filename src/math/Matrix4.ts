@@ -27,7 +27,7 @@ export class Matrix4 {
   /**
    * Itself but transposed.
    */
-  public get transposed(): Matrix4 {
+  public get transpose(): Matrix4 {
     const m = this.elements;
 
     return new Matrix4( [
@@ -61,7 +61,7 @@ export class Matrix4 {
   /**
    * Itself but inverted.
    */
-  public get inversed(): Matrix4 {
+  public get inverse(): Matrix4 {
     const m = this.elements;
     const
       a00 = m[  0 ], a01 = m[  1 ], a02 = m[  2 ], a03 = m[  3 ],
