@@ -1,7 +1,10 @@
 module.exports = {
   "root": true,
 
-  "plugins": [ "@typescript-eslint" ],
+  "plugins": [
+    "@typescript-eslint",
+    "jest"
+  ],
 
   "env": {
     "browser": true,
@@ -12,6 +15,7 @@ module.exports = {
 
   "extends": [
     "eslint:recommended",
+    "plugin:jest/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
   ],

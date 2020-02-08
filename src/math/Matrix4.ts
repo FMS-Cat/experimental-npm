@@ -260,20 +260,17 @@ export class Matrix4 {
     up = new Vector3( [ 0.0, 1.0, 0.0 ] ),
     roll = 0.0
   ): Matrix4 {
-    const dir = target.sub( position ).normalized;
-    let sid = dir.cross( up ).normalized;
-    let top = sid.cross( dir );
+    const dir = position.sub( target ).normalized;
+    let sid = up.cross( dir ).normalized;
+    let top = dir.cross( sid );
     sid = sid.scale( Math.cos( roll ) ).add( top.scale( Math.sin( roll ) ) );
-    top = sid.cross( dir );
+    top = dir.cross( sid );
 
     return new Matrix4( [
-      sid.x, top.x, dir.x, 0.0,
-      sid.y, top.y, dir.y, 0.0,
-      sid.z, top.z, dir.z, 0.0,
-      -sid.x * position.x - sid.y * position.y - sid.z * position.z,
-      -top.x * position.x - top.y * position.y - top.z * position.z,
-      -dir.x * position.x - dir.y * position.y - dir.z * position.z,
-      1.0
+      sid.x, sid.y, sid.z, 0.0,
+      top.x, top.y, top.z, 0.0,
+      dir.x, dir.y, dir.z, 0.0,
+      position.x, position.y, position.z, 1.0
     ] );
   }
 
@@ -287,7 +284,7 @@ export class Matrix4 {
     return new Matrix4( [
       p, 0.0, 0.0, 0.0,
       0.0, p, 0.0, 0.0,
-      0.0, 0.0, ( far + near ) / d, 1.0,
+      0.0, 0.0, -( far + near ) / d, -1.0,
       0.0, 0.0, -2 * far * near / d, 0.0
     ] );
   }
