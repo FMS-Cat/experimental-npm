@@ -157,6 +157,9 @@ workflows:
       - lint:
           requires:
             - fetch
+      - test:
+          requires:
+            - fetch
       - artifacts:
           requires:
             - build
