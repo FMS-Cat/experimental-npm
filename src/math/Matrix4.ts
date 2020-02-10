@@ -61,7 +61,7 @@ export class Matrix4 {
   /**
    * Itself but inverted.
    */
-  public get inverse(): Matrix4 {
+  public get inverse(): Matrix4 | null {
     const m = this.elements;
     const
       a00 = m[  0 ], a01 = m[  1 ], a02 = m[  2 ], a03 = m[  3 ],
@@ -75,7 +75,11 @@ export class Matrix4 {
       b08 = a20 * a33 - a23 * a30,  b09 = a21 * a32 - a22 * a31,
       b10 = a21 * a33 - a23 * a31,  b11 = a22 * a33 - a23 * a32;
 
-    const invDet = 1.0 / b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
+    const det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
+
+    if ( det === 0.0 ) { return null; }
+
+    const invDet = 1.0 / det;
 
     return new Matrix4( [
       a11 * b11 - a12 * b10 + a13 * b09,
