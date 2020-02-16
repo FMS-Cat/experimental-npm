@@ -79,10 +79,13 @@ export class Vector3 extends Vector<Vector3> {
   public applyMatrix4( matrix: Matrix4 ): Vector3 {
     const m = matrix.elements;
 
+    const w = m[ 3 ] * this.x + m[ 7 ] * this.y + m[ 11 ] * this.z + m[ 15 ];
+    const invW = 1.0 / w;
+
     return new Vector3( [
-      m[ 0 ] * this.x + m[ 4 ] * this.y + m[ 8 ] * this.z + m[ 12 ],
-      m[ 1 ] * this.x + m[ 5 ] * this.y + m[ 9 ] * this.z + m[ 13 ],
-      m[ 2 ] * this.x + m[ 6 ] * this.y + m[ 10 ] * this.z + m[ 14 ]
+      ( m[ 0 ] * this.x + m[ 4 ] * this.y + m[ 8 ] * this.z + m[ 12 ] ) * invW,
+      ( m[ 1 ] * this.x + m[ 5 ] * this.y + m[ 9 ] * this.z + m[ 13 ] ) * invW,
+      ( m[ 2 ] * this.x + m[ 6 ] * this.y + m[ 10 ] * this.z + m[ 14 ] ) * invW
     ] );
   }
 
