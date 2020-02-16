@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@fms-cat/experimental - fms-cat.html</title>
+  </head>
+  <body>
+    <div>
+      <input id="buttonFrame" type="button" value="ClockFrame" />
+      <input id="buttonRealtime" type="button" value="ClockRealtime" />
+    </div>
+    <div>
+      <input id="buttonPlay" type="button" value="Play" />
+      <input id="buttonPause" type="button" value="Pause" />
+    </div>
+    <div>
+      <div id="divTime"></div>
+      <div id="divDeltaTime"></div>
+    </div>
+    <script src="../dist/fms-cat-experimental.js"></script>
+    <script>
+      let clock = new FMS_CAT_EXPERIMENTAL.ClockRealtime();
+
+      const update = () => {
+        clock.update();
+
+        divTime.innerText = clock.time;
+        divDeltaTime.innerText = clock.deltaTime;
+
+        requestAnimationFrame( update );
+      };
+      update();
+
+      buttonPlay.addEventListener( 'click', () => {
+        clock.play();
+      } );
+
+      buttonPause.addEventListener( 'click', () => {
+        clock.pause();
+      } );
+
+      buttonFrame.addEventListener( 'click', () => {
+        clock = new FMS_CAT_EXPERIMENTAL.ClockFrame();
+      } );
+
+      buttonRealtime.addEventListener( 'click', () => {
+        clock = new FMS_CAT_EXPERIMENTAL.ClockRealtime();
+      } );
+    </script>
+  </body>
+</html>

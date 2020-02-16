@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FizzBuzz | @fms-cat/experimental</title>
+	<title>Swap | @fms-cat/experimental</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="fizzbuzz.html">FizzBuzz</a>
+					<a href="swap.html">Swap</a>
 				</li>
 			</ul>
-			<h1>Class FizzBuzz</h1>
+			<h1>Class Swap&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -67,22 +67,24 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Iterable FizzBuzz</p>
+						<p>Useful for swap buffer</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FizzBuzz</span>
+						<span class="target">Swap</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -92,23 +94,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="fizzbuzz.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="swap.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="fizzbuzz.html#__end" class="tsd-kind-icon">__end</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="fizzbuzz.html#__index" class="tsd-kind-icon">__index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="fizzbuzz.html#__words" class="tsd-kind-icon">__words</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="fizzbuzz.html#wordsdefault" class="tsd-kind-icon">Words<wbr>Default</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="swap.html#i" class="tsd-kind-icon">i</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="swap.html#o" class="tsd-kind-icon">o</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="fizzbuzz.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="fizzbuzz.html#next" class="tsd-kind-icon">next</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="swap.html#swap-1" class="tsd-kind-icon">swap</a></li>
 							</ul>
 						</section>
 					</div>
@@ -120,71 +119,48 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Fizz<wbr>Buzz<span class="tsd-signature-symbol">(</span>words<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="fizzbuzz.html" class="tsd-signature-type">FizzBuzz</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Swap<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="swap.html" class="tsd-signature-type">Swap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L12">FizzBuzz/FizzBuzz.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/Swap/Swap.ts#L6">Swap/Swap.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> words: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;FizzBuzz.WordsDefault</span></h5>
+									<h5>a: <span class="tsd-signature-type">T</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> index: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> end: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;100</span></h5>
+									<h5>b: <span class="tsd-signature-type">T</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="fizzbuzz.html" class="tsd-signature-type">FizzBuzz</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="swap.html" class="tsd-signature-type">Swap</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="__end" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __end</h3>
-					<div class="tsd-signature tsd-kind-icon">__end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="i" class="tsd-anchor"></a>
+					<h3>i</h3>
+					<div class="tsd-signature tsd-kind-icon">i<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L12">FizzBuzz/FizzBuzz.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/Swap/Swap.ts#L5">Swap/Swap.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="__index" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __index</h3>
-					<div class="tsd-signature tsd-kind-icon">__index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="o" class="tsd-anchor"></a>
+					<h3>o</h3>
+					<div class="tsd-signature tsd-kind-icon">o<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L11">FizzBuzz/FizzBuzz.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="__words" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __words</h3>
-					<div class="tsd-signature tsd-kind-icon">__words<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L10">FizzBuzz/FizzBuzz.ts:10</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="wordsdefault" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> Words<wbr>Default</h3>
-					<div class="tsd-signature tsd-kind-icon">Words<wbr>Default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map( [[ 3, &#x27;Fizz&#x27; ],[ 5, &#x27;Buzz&#x27; ]] )</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L5">FizzBuzz/FizzBuzz.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/Swap/Swap.ts#L6">Swap/Swap.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -192,36 +168,19 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="_symbol_iterator_" class="tsd-anchor"></a>
-					<h3>[<wbr>Symbol.iterator]</h3>
+					<a name="swap-1" class="tsd-anchor"></a>
+					<h3>swap</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">[<wbr>Symbol.iterator]<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L20">FizzBuzz/FizzBuzz.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/Swap/Swap.ts#L13">Swap/Swap.ts:13</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="next" class="tsd-anchor"></a>
-					<h3>next</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorResult</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L24">FizzBuzz/FizzBuzz.ts:24</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IteratorResult</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -255,36 +214,9 @@
 					<li class=" tsd-kind-class">
 						<a href="fms_cat.html" class="tsd-kind-icon">FMS_<wbr><wbr>Cat</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="fizzbuzz.html" class="tsd-kind-icon">Fizz<wbr>Buzz</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="fizzbuzz.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="fizzbuzz.html#__end" class="tsd-kind-icon">__end</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="fizzbuzz.html#__index" class="tsd-kind-icon">__index</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="fizzbuzz.html#__words" class="tsd-kind-icon">__words</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="fizzbuzz.html#wordsdefault" class="tsd-kind-icon">Words<wbr>Default</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="fizzbuzz.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="fizzbuzz.html#next" class="tsd-kind-icon">next</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="historymeancalculator.html" class="tsd-kind-icon">History<wbr>Mean<wbr>Calculator</a>
 					</li>
@@ -294,9 +226,27 @@
 					<li class=" tsd-kind-class">
 						<a href="quaternion.html" class="tsd-kind-icon">Quaternion</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-has-type-parameter">
 						<a href="swap.html" class="tsd-kind-icon">Swap</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="swap.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="swap.html#i" class="tsd-kind-icon">i</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="swap.html#o" class="tsd-kind-icon">o</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="swap.html#swap-1" class="tsd-kind-icon">swap</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="vector.html" class="tsd-kind-icon">Vector</a>
 					</li>

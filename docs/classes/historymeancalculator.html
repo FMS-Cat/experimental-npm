@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FizzBuzz | @fms-cat/experimental</title>
+	<title>HistoryMeanCalculator | @fms-cat/experimental</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="fizzbuzz.html">FizzBuzz</a>
+					<a href="historymeancalculator.html">HistoryMeanCalculator</a>
 				</li>
 			</ul>
-			<h1>Class FizzBuzz</h1>
+			<h1>Class HistoryMeanCalculator</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Iterable FizzBuzz</p>
+						<p>Useful for fps calc</p>
 					</div>
 				</div>
 			</section>
@@ -75,14 +75,8 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FizzBuzz</span>
+						<span class="target">HistoryMeanCalculator</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -92,23 +86,34 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="fizzbuzz.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="historymeancalculator.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="historymeancalculator.html#__cache" class="tsd-kind-icon">__cache</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="historymeancalculator.html#__count" class="tsd-kind-icon">__count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="historymeancalculator.html#__countuntilrecalc" class="tsd-kind-icon">__count<wbr>Until<wbr>Recalc</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="historymeancalculator.html#__history" class="tsd-kind-icon">__history</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="historymeancalculator.html#__index" class="tsd-kind-icon">__index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="historymeancalculator.html#__length" class="tsd-kind-icon">__length</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="historymeancalculator.html#__recalcforeach" class="tsd-kind-icon">__recalc<wbr>For<wbr>Each</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="fizzbuzz.html#__end" class="tsd-kind-icon">__end</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="fizzbuzz.html#__index" class="tsd-kind-icon">__index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="fizzbuzz.html#__words" class="tsd-kind-icon">__words</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="fizzbuzz.html#wordsdefault" class="tsd-kind-icon">Words<wbr>Default</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="historymeancalculator.html#mean" class="tsd-kind-icon">mean</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="historymeancalculator.html#recalcforeach" class="tsd-kind-icon">recalc<wbr>For<wbr>Each</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="fizzbuzz.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="fizzbuzz.html#next" class="tsd-kind-icon">next</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="historymeancalculator.html#push" class="tsd-kind-icon">push</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="historymeancalculator.html#recalc" class="tsd-kind-icon">recalc</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="historymeancalculator.html#reset" class="tsd-kind-icon">reset</a></li>
 							</ul>
 						</section>
 					</div>
@@ -120,108 +125,207 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Fizz<wbr>Buzz<span class="tsd-signature-symbol">(</span>words<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="fizzbuzz.html" class="tsd-signature-type">FizzBuzz</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>History<wbr>Mean<wbr>Calculator<span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="historymeancalculator.html" class="tsd-signature-type">HistoryMeanCalculator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L12">FizzBuzz/FizzBuzz.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L11">HistoryMeanCalculator/HistoryMeanCalculator.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> words: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;FizzBuzz.WordsDefault</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> index: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> end: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;100</span></h5>
+									<h5>length: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="fizzbuzz.html" class="tsd-signature-type">FizzBuzz</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="historymeancalculator.html" class="tsd-signature-type">HistoryMeanCalculator</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="__end" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __end</h3>
-					<div class="tsd-signature tsd-kind-icon">__end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="__cache" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __cache</h3>
+					<div class="tsd-signature tsd-kind-icon">__cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L12">FizzBuzz/FizzBuzz.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L11">HistoryMeanCalculator/HistoryMeanCalculator.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="__count" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __count</h3>
+					<div class="tsd-signature tsd-kind-icon">__count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L10">HistoryMeanCalculator/HistoryMeanCalculator.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="__countuntilrecalc" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __count<wbr>Until<wbr>Recalc</h3>
+					<div class="tsd-signature tsd-kind-icon">__count<wbr>Until<wbr>Recalc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L6">HistoryMeanCalculator/HistoryMeanCalculator.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="__history" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __history</h3>
+					<div class="tsd-signature tsd-kind-icon">__history<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L7">HistoryMeanCalculator/HistoryMeanCalculator.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="__index" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __index</h3>
-					<div class="tsd-signature tsd-kind-icon">__index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<div class="tsd-signature tsd-kind-icon">__index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L11">FizzBuzz/FizzBuzz.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L8">HistoryMeanCalculator/HistoryMeanCalculator.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="__words" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __words</h3>
-					<div class="tsd-signature tsd-kind-icon">__words<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="__length" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __length</h3>
+					<div class="tsd-signature tsd-kind-icon">__length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L10">FizzBuzz/FizzBuzz.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L9">HistoryMeanCalculator/HistoryMeanCalculator.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="wordsdefault" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> Words<wbr>Default</h3>
-					<div class="tsd-signature tsd-kind-icon">Words<wbr>Default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map( [[ 3, &#x27;Fizz&#x27; ],[ 5, &#x27;Buzz&#x27; ]] )</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="__recalcforeach" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> __recalc<wbr>For<wbr>Each</h3>
+					<div class="tsd-signature tsd-kind-icon">__recalc<wbr>For<wbr>Each<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L5">FizzBuzz/FizzBuzz.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L5">HistoryMeanCalculator/HistoryMeanCalculator.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="_symbol_iterator_" class="tsd-anchor"></a>
-					<h3>[<wbr>Symbol.iterator]</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">[<wbr>Symbol.iterator]<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="mean" class="tsd-anchor"></a>
+					<h3>mean</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> mean<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L20">FizzBuzz/FizzBuzz.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L21">HistoryMeanCalculator/HistoryMeanCalculator.ts:21</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="recalcforeach" class="tsd-anchor"></a>
+					<h3>recalc<wbr>For<wbr>Each</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> recalcForEach<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> recalcForEach<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L26">HistoryMeanCalculator/HistoryMeanCalculator.ts:26</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L30">HistoryMeanCalculator/HistoryMeanCalculator.ts:30</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="push" class="tsd-anchor"></a>
+					<h3>push</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">push<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L46">HistoryMeanCalculator/HistoryMeanCalculator.ts:46</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="next" class="tsd-anchor"></a>
-					<h3>next</h3>
+					<a name="recalc" class="tsd-anchor"></a>
+					<h3>recalc</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorResult</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">recalc<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/FizzBuzz/FizzBuzz.ts#L24">FizzBuzz/FizzBuzz.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L62">HistoryMeanCalculator/HistoryMeanCalculator.ts:62</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IteratorResult</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="reset" class="tsd-anchor"></a>
+					<h3>reset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/FMS-Cat/experimental-npm/blob/ad90f49/src/HistoryMeanCalculator/HistoryMeanCalculator.ts#L36">HistoryMeanCalculator/HistoryMeanCalculator.ts:36</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -255,39 +359,57 @@
 					<li class=" tsd-kind-class">
 						<a href="fms_cat.html" class="tsd-kind-icon">FMS_<wbr><wbr>Cat</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="fizzbuzz.html" class="tsd-kind-icon">Fizz<wbr>Buzz</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="fizzbuzz.html" class="tsd-kind-icon">Fizz<wbr>Buzz</a>
+						<a href="historymeancalculator.html" class="tsd-kind-icon">History<wbr>Mean<wbr>Calculator</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="fizzbuzz.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="historymeancalculator.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="fizzbuzz.html#__end" class="tsd-kind-icon">__end</a>
+								<a href="historymeancalculator.html#__cache" class="tsd-kind-icon">__cache</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="fizzbuzz.html#__index" class="tsd-kind-icon">__index</a>
+								<a href="historymeancalculator.html#__count" class="tsd-kind-icon">__count</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="fizzbuzz.html#__words" class="tsd-kind-icon">__words</a>
+								<a href="historymeancalculator.html#__countuntilrecalc" class="tsd-kind-icon">__count<wbr>Until<wbr>Recalc</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="fizzbuzz.html#wordsdefault" class="tsd-kind-icon">Words<wbr>Default</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="historymeancalculator.html#__history" class="tsd-kind-icon">__history</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="historymeancalculator.html#__index" class="tsd-kind-icon">__index</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="historymeancalculator.html#__length" class="tsd-kind-icon">__length</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="historymeancalculator.html#__recalcforeach" class="tsd-kind-icon">__recalc<wbr>For<wbr>Each</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="historymeancalculator.html#mean" class="tsd-kind-icon">mean</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="historymeancalculator.html#recalcforeach" class="tsd-kind-icon">recalc<wbr>For<wbr>Each</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="fizzbuzz.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a>
+								<a href="historymeancalculator.html#push" class="tsd-kind-icon">push</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="fizzbuzz.html#next" class="tsd-kind-icon">next</a>
+								<a href="historymeancalculator.html#recalc" class="tsd-kind-icon">recalc</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="historymeancalculator.html#reset" class="tsd-kind-icon">reset</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="historymeancalculator.html" class="tsd-kind-icon">History<wbr>Mean<wbr>Calculator</a>
-					</li>
 					<li class=" tsd-kind-class">
 						<a href="matrix4.html" class="tsd-kind-icon">Matrix4</a>
 					</li>
