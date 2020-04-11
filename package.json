@@ -2,7 +2,7 @@
   "name": "@fms-cat/experimental",
   "description": "Experimental edition of FMS_Cat",
   "author": "FMS_Cat",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/fms-cat-experimental.js",
   "types": "types/index.d.ts",
   "license": "MIT",
