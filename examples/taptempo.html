@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@fms-cat/experimental - fms-cat.html</title>
+  </head>
+  <body>
+    <div>
+      <input id="buttonTap" type="button" value="Tap" />
+    </div>
+    <div>
+      <input id="buttonAdjustDown" type="button" value="&lt;&lt;" />
+      Adjust
+      <input id="buttonAdjustUp" type="button" value="&gt;&gt;" />
+    </div>
+    <div>
+      <input id="buttonNudgePrev" type="button" value="&lt;&lt;" />
+      Nudge
+      <input id="buttonNudgeFw" type="button" value="&gt;&gt;" />
+    </div>
+    <div>
+      <div id="divBPM"></div>
+      <div id="divBeat"></div>
+    </div>
+    <script src="../dist/fms-cat-experimental.js"></script>
+    <script>
+      console.log(FMS_CAT_EXPERIMENTAL);
+      let tapTempo = new FMS_CAT_EXPERIMENTAL.TapTempo();
+
+      const update = () => {
+        divBPM.innerText = tapTempo.bpm;
+        divBeat.innerText = tapTempo.beat;
+
+        requestAnimationFrame( update );
+      };
+      update();
+
+      buttonTap.addEventListener( 'click', () => {
+        tapTempo.tap();
+      } );
+
+      buttonAdjustDown.addEventListener( 'click', () => {
+        tapTempo.bpm = Math.round( tapTempo.bpm - 1.0 );
+      } );
+
+      buttonAdjustUp.addEventListener( 'click', () => {
+        tapTempo.bpm = Math.round( tapTempo.bpm + 1.0 );
+      } );
+
+      buttonNudgePrev.addEventListener( 'click', () => {
+        tapTempo.nudge( -0.1 );
+      } );
+
+      buttonNudgeFw.addEventListener( 'click', () => {
+        tapTempo.nudge( 0.1 );
+      } );
+    </script>
+  </body>
+</html>

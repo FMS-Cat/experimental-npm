@@ -8,4 +8,5 @@ export * from './FMS_Cat';
 export * from './HistoryMeanCalculator';
 export * from './math';
 export * from './Swap';
+export * from './TapTempo';
 export * from './Xorshift';
