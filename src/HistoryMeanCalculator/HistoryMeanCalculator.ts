@@ -43,28 +43,26 @@ export class HistoryMeanCalculator {
     }
   }
 
-  public push( value: number ): number {
+  public push( value: number ): void {
     const prev = this.__history[ this.__index ];
     this.__history[ this.__index ] = value;
     this.__count ++;
     this.__index = ( this.__index + 1 ) % this.__length;
 
     if ( this.__countUntilRecalc === 0 ) {
-      return this.recalc();
+      this.recalc();
     } else {
       this.__countUntilRecalc --;
       this.__cache -= prev;
       this.__cache += value;
-      return this.mean;
     }
   }
 
-  public recalc(): number {
+  public recalc(): void {
     this.__countUntilRecalc = this.__recalcForEach;
     const sum = this.__history
       .slice( 0, Math.min( this.__count, this.__length ) )
       .reduce( ( sum, v ) => sum + v, 0 );
     this.__cache = sum;
-    return this.mean;
   }
 }
