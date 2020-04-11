@@ -7,11 +7,11 @@ module.exports = ( env, argv ) => {
   const isProd = mode === 'production';
 
   const banner = isProd
-    ? '(c) 2019 FMS_Cat - https://github.com/FMS-Cat/experimental/blob/master/LICENSE'
+    ? '(c) FMS_Cat - https://github.com/FMS-Cat/experimental/blob/master/LICENSE'
     : `@fms-cat/experimental v${ require( './package.json' ).version }
     Experimental edition of FMS_Cat
 
-Copyright (c) FMS_Cat
+Copyright (c) 2019-2020 FMS_Cat
 @fms-cat/experimental is distributed under the MIT License
 https://github.com/FMS-Cat/experimental/blob/master/LICENSE`;
 
