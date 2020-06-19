@@ -1,4 +1,5 @@
-import { Quaternion, Vector3 } from '.';
+import { Quaternion } from './Quaternion';
+import { Vector3 } from './Vector3';
 
 export type rawMatrix4 = [
   number, number, number, number,
