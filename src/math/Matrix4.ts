@@ -257,7 +257,9 @@ export class Matrix4 {
   }
 
   /**
-   * Generate a "LookAt" view matrix.
+   * Generate a "LookAt" matrix.
+   *
+   * See also: {@link lookAtInverse}
    */
   public static lookAt(
     position: Vector3,
@@ -276,6 +278,34 @@ export class Matrix4 {
       top.x, top.y, top.z, 0.0,
       dir.x, dir.y, dir.z, 0.0,
       position.x, position.y, position.z, 1.0
+    ] );
+  }
+
+  /**
+   * Generate an inverse of "LookAt" matrix. Good for creating a view matrix.
+   *
+   * See also: {@link lookAt}
+   */
+  public static lookAtInverse(
+    position: Vector3,
+    target = new Vector3( [ 0.0, 0.0, 0.0 ] ),
+    up = new Vector3( [ 0.0, 1.0, 0.0 ] ),
+    roll = 0.0
+  ): Matrix4 {
+    const dir = position.sub( target ).normalized;
+    let sid = up.cross( dir ).normalized;
+    let top = dir.cross( sid );
+    sid = sid.scale( Math.cos( roll ) ).add( top.scale( Math.sin( roll ) ) );
+    top = dir.cross( sid );
+
+    return new Matrix4( [
+      sid.x, top.x, dir.x, 0.0,
+      sid.y, top.y, dir.y, 0.0,
+      sid.z, top.z, dir.z, 0.0,
+      -sid.x * position.x - sid.y * position.y - sid.z * position.z,
+      -top.x * position.x - top.y * position.y - top.z * position.z,
+      -dir.x * position.x - dir.y * position.y - dir.z * position.z,
+      1.0
     ] );
   }
 

@@ -30,11 +30,25 @@ const rawMatrixLookAtFrom345To678: rawMatrix4 = [
   3, 4, 5, 1
 ];
 
+const rawMatrixInvLookAtFrom345To678: rawMatrix4 = [
+  -0.7071067811865476, -0.40824829046386313, -0.577350269189626, 0,
+  1.110223024625157e-16, 0.8164965809277259, -0.5773502691896257, 0,
+  0.7071067811865478, -0.408248290463863, -0.5773502691896257, 0,
+  -1.414213562373097, 8.881784197001256e-16, 6.92820323027551, 1
+];
+
 const rawMatrixLookAtFrom345To678Up100: rawMatrix4 = [
   2.220446049250313e-16, 0.7071067811865474, -0.7071067811865475,
   0, 0.8164965809277259, -0.40824829046386313, -0.4082482904638629, 0,
   -0.5773502691896257, -0.5773502691896257, -0.5773502691896257, 0,
   3, 4, 5, 1
+];
+
+const rawMatrixInvLookAtFrom345To678Up100: rawMatrix4 = [
+  1.3877787807814462e-16, 0.8164965809277261, -0.577350269189626, 0,
+  0.7071067811865477, -0.40824829046386324, -0.5773502691896257, 0,
+  -0.7071067811865478, -0.40824829046386296, -0.5773502691896258, 0,
+  0.7071067811865476, 1.2247448713915892, 6.9282032302755105, 1
 ];
 
 const rawMatrixPerspectiveFov40Near1Far500: rawMatrix4 = [
@@ -113,6 +127,41 @@ describe( 'Matrix4', () => {
       expect( matrix ).toBeInstanceOf( Matrix4 );
 
       expect( matrix.elements ).toBeCloseToArray( rawMatrixLookAtFrom345To678Up100 );
+    } );
+  } );
+
+  describe( 'lookAtInverse', () => {
+    it( 'should create the inverse of a lookAt matrix correctly with 1 argument', () => {
+      const matrix = Matrix4.lookAtInverse(
+        new Vector3( [ 3.0, 4.0, 5.0 ] )
+      );
+
+      expect( matrix ).toBeInstanceOf( Matrix4 );
+
+      expect( matrix.elements ).toBeCloseToArray( rawMatrixInvLookAtFrom345 );
+    } );
+
+    it( 'should create a lookAt matrix correctly with 2 arguments', () => {
+      const matrix = Matrix4.lookAtInverse(
+        new Vector3( [ 3.0, 4.0, 5.0 ] ),
+        new Vector3( [ 6.0, 7.0, 8.0 ] )
+      );
+
+      expect( matrix ).toBeInstanceOf( Matrix4 );
+
+      expect( matrix.elements ).toBeCloseToArray( rawMatrixInvLookAtFrom345To678 );
+    } );
+
+    it( 'should create a lookAt matrix correctly with 3 arguments', () => {
+      const matrix = Matrix4.lookAtInverse(
+        new Vector3( [ 3.0, 4.0, 5.0 ] ),
+        new Vector3( [ 6.0, 7.0, 8.0 ] ),
+        new Vector3( [ 1.0, 0.0, 0.0 ] )
+      );
+
+      expect( matrix ).toBeInstanceOf( Matrix4 );
+
+      expect( matrix.elements ).toBeCloseToArray( rawMatrixInvLookAtFrom345To678Up100 );
     } );
   } );
 
