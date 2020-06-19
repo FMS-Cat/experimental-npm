@@ -1,4 +1,5 @@
-import { Matrix4, Vector } from '.';
+import { Matrix4 } from './Matrix4';
+import { Vector } from './Vector';
 
 export type rawVector4 = [ number, number, number, number ];
 
