@@ -1,11 +1,11 @@
-import { HistoryMedianCalculator } from '../HistoryMeanCalculator/HistoryMedianCalculator';
+import { HistoryMeanCalculator } from '../HistoryMeanCalculator/HistoryMeanCalculator';
 
 export class TapTempo {
   private __bpm = 0.0;
   private __lastTap = 0.0;
   private __lastBeat = 0.0;
   private __lastTime = 0.0;
-  private __calc: HistoryMedianCalculator = new HistoryMedianCalculator( 16 );
+  private __calc: HistoryMeanCalculator = new HistoryMeanCalculator( 16 );
 
   public get beatDuration(): number {
     return 60.0 / this.__bpm;
@@ -42,7 +42,7 @@ export class TapTempo {
       this.reset();
     } else {
       this.__calc.push( delta );
-      this.__bpm = 60.0 / ( this.__calc.median );
+      this.__bpm = 60.0 / ( this.__calc.mean );
     }
 
     this.__lastTap = now;
