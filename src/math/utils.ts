@@ -20,6 +20,13 @@ export function saturate( x: number ): number {
 }
 
 /**
+ * Transform a value from input range to output range.
+ */
+export function range( x: number, x0: number, x1: number, y0: number, y1: number ): number {
+  return ( ( x - x0 ) * ( y1 - y0 ) / ( x1 - x0 ) + y0 );
+}
+
+/**
  * `smoothstep` but not smooth
  */
 export function linearstep( a: number, b: number, x: number ): number {
