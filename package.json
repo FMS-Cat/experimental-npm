@@ -2,7 +2,7 @@
   "name": "@fms-cat/experimental",
   "description": "Experimental edition of FMS_Cat",
   "author": "FMS_Cat",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "dist/fms-cat-experimental.js",
   "module": "dist/fms-cat-experimental.module.js",
   "types": "types/index.d.ts",
