@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@fms-cat/experimental - fms-cat.html</title>
+  </head>
+  <body>
+    <div id="container">
+      <canvas id="canvas"></canvas>
+    </div>
+    <script src="../dist/fms-cat-experimental.js"></script>
+    <script>
+      const { edt2d, range } = FMS_CAT_EXPERIMENTAL;
+
+      let width = canvas.width = 256;
+      let height = canvas.height = 256;
+
+      const context = canvas.getContext( '2d' );
+
+      context.clearRect( 0, 0, width, height );
+
+      context.fillStyle = '#fff';
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.font = '500 64px Impact, sans-serif';
+      context.fillText( 'whomst', 128, 128 );
+
+      function process() {
+        const imageData = context.getImageData( 0, 0, width, height );
+        const dataSrc = new Float32Array( width * height );
+
+        const inside = new Float32Array( width * height );
+        const outside = new Float32Array( width * height );
+
+        for ( let i = 0; i < width * height; i ++ ) {
+          const v = range( imageData.data[ i * 4 + 0 ], 0.0, 255.0, -1.0, 1.0 );
+          inside[ i ] = (
+            v === 1.0 ? 1E8 :
+            v === -1.0 ? 0.0 :
+            Math.max( 0.0, v )
+          );
+
+          outside[ i ] = (
+            v === 1.0 ? 0.0 :
+            v === -1.0 ? 1E8 :
+            Math.max( 0.0, -v )
+          );
+        }
+
+        edt2d( inside, width, height );
+        edt2d( outside, width, height );
+
+        for ( let i = 0; i < width * height; i ++ ) {
+          const level = range( Math.sqrt( outside[ i ] ) - Math.sqrt( inside[ i ] ), -128.0, 127.0, 0.0, 255.0 );
+          imageData.data[ i * 4 + 0 ] = level;
+          imageData.data[ i * 4 + 1 ] = level;
+          imageData.data[ i * 4 + 2 ] = level;
+          imageData.data[ i * 4 + 3 ] = 255;
+        }
+
+        context.putImageData( imageData, 0, 0 );
+      }
+      process();
+
+      window.addEventListener( 'dragover', ( event ) => {
+        event.preventDefault();
+      } );
+
+      window.addEventListener( 'drop', ( event ) => {
+        event.preventDefault();
+
+        const files = event.dataTransfer.files;
+        const file = files[ 0 ];
+
+        if ( !file.type.startsWith( 'image' ) ) {
+          console.error( 'Given file is not an image!' );
+          return;
+        }
+
+        const blob = new Blob( [ file ] );
+        const url = URL.createObjectURL( blob );
+
+        const image = new Image();
+        image.onload = () => {
+          width = canvas.width = image.width;
+          width = canvas.height = image.height;
+
+          context.clearRect( 0, 0, width, height );
+
+          context.drawImage( image, 0, 0 );
+
+          URL.revokeObjectURL( url );
+
+          process();
+        };
+        image.src = url;
+      } );
+    </script>
+  </body>
+</html>

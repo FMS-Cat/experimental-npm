@@ -2,6 +2,7 @@ export * from './algorithm';
 export * from './array';
 export * from './CDS';
 export * from './Clock';
+export * from './edt';
 export * from './ExpSmooth';
 export * from './FizzBuzz';
 export * from './FMS_Cat';
