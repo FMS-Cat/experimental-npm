@@ -1,8 +1,8 @@
-import { HistoryMedianCalculator } from '../HistoryMedianCalculator';
+import { HistoryPercentileCalculator } from '../HistoryPercentileCalculator';
 
-describe( 'HistoryMedianCalculator', () => {
-  it( 'should return a median properly (array is not fully populated)', () => {
-    const calc = new HistoryMedianCalculator( 10 );
+describe( 'HistoryPercentileCalculator', () => {
+  it( 'should return a median properly (array is partially populated)', () => {
+    const calc = new HistoryPercentileCalculator( 10 );
     calc.push( 12 );
     calc.push( 4 );
     calc.push( 3 );
@@ -12,7 +12,7 @@ describe( 'HistoryMedianCalculator', () => {
   } );
 
   it( 'should return a median properly (array is fully populated)', () => {
-    const calc = new HistoryMedianCalculator( 5 );
+    const calc = new HistoryPercentileCalculator( 5 );
     calc.push( 2 );
     calc.push( 3 );
     calc.push( 4 );

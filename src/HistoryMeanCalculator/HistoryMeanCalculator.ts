@@ -1,5 +1,6 @@
 /**
- * Useful for fps calc
+ * Useful for tap tempo
+ * See also: {@link HistoryMeanCalculator}
  */
 export class HistoryMeanCalculator {
   private __recalcForEach = 0;
