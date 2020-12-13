@@ -36,11 +36,11 @@ export class HistoryPercentileCalculator {
 
     // remove the prev from sorted array
     if ( this.__sorted.length === this.__length ) {
-      const prevIndex = binarySearch( prev, this.__sorted );
+      const prevIndex = binarySearch( this.__sorted, prev );
       this.__sorted.splice( prevIndex, 1 );
     }
 
-    const index = binarySearch( value, this.__sorted );
+    const index = binarySearch( this.__sorted, value );
     this.__sorted.splice( index, 0, value );
   }
 }

@@ -1,15 +1,32 @@
 // yoinked from https://stackoverflow.com/questions/1344500/efficient-way-to-insert-a-number-into-a-sorted-array-of-numbers
 
-export function binarySearch(
-  element: number,
-  array: ArrayLike<number>
+/**
+ * Look for an index from a sorted list using the binary search.
+ * @param array A sorted array
+ * @param compare Make this function return `false` if you want to point right side of given element, `true` if you want to point left side of given element.
+ * @returns An index found
+ */
+export function binarySearch<T>( array: ArrayLike<T>, element: T ): number;
+export function binarySearch<T>( array: ArrayLike<T>, compare: ( element: T ) => boolean ): number;
+export function binarySearch<T>(
+  array: ArrayLike<T>,
+  elementOrCompare: T | ( ( element: T ) => boolean ),
 ): number {
+  if ( typeof elementOrCompare !== 'function' ) {
+    return binarySearch( array, ( element ) => ( element <= elementOrCompare ) );
+  }
+  const compare = elementOrCompare as ( element: T ) => boolean;
+
   let start = 0;
   let end = array.length;
 
   while ( start < end ) {
     const center = ( start + end ) >> 1;
-    if ( array[ center ] < element ) {
+    const centerElement = array[ center ];
+
+    const compareResult = compare( centerElement );
+
+    if ( compareResult ) {
       start = center + 1;
     } else {
       end = center;
