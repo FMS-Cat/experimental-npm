@@ -1,7 +1,11 @@
 // yoinked from https://stackoverflow.com/questions/1344500/efficient-way-to-insert-a-number-into-a-sorted-array-of-numbers
 
 /**
- * Look for an index from a sorted list using the binary search.
+ * Look for an index from a sorted list using binary search.
+ *
+ * If you don't provide a compare function, it will look for **the first same value** it can find.
+ * If it cannot find an exactly matching value, it can return N where the length of given array is N.
+ *
  * @param array A sorted array
  * @param compare Make this function return `false` if you want to point right side of given element, `true` if you want to point left side of given element.
  * @returns An index found
@@ -13,7 +17,7 @@ export function binarySearch<T>(
   elementOrCompare: T | ( ( element: T ) => boolean ),
 ): number {
   if ( typeof elementOrCompare !== 'function' ) {
-    return binarySearch( array, ( element ) => ( element <= elementOrCompare ) );
+    return binarySearch( array, ( element ) => ( element < elementOrCompare ) );
   }
   const compare = elementOrCompare as ( element: T ) => boolean;
 
