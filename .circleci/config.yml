@@ -84,7 +84,7 @@ jobs:
       - store_artifacts:
           path: docs
 
-  deploy-master:
+  deploy-release:
     <<: *defaults
     steps:
       - checkout
@@ -163,20 +163,20 @@ workflows:
       - artifacts:
           requires:
             - build
-      - deploy-master:
+      - deploy-release:
           requires:
             - build
           filters:
             branches:
               only:
-                - master
+                - release
       - gh-pages:
           requires:
             - build
           filters:
             branches:
               only:
-                - master
+                - release
 
   nightly:
     triggers:

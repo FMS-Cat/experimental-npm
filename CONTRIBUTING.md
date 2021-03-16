@@ -6,13 +6,13 @@ Actually a memo for myself
 
 Author code on `dev` branch
 
-Merge the `dev` into `master` once you bump the version
+Merge the `dev` into `release` once you bump the version
 
 ### Deploy
 
-Pushing to `master` automatically deploys
+Pushing to `release` automatically deploys
 
-See `deploy-master` job on CircleCI
+See `deploy-release` job on CircleCI
 
 ### Nightly builds
 
