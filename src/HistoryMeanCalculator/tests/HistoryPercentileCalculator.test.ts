@@ -22,4 +22,16 @@ describe( 'HistoryPercentileCalculator', () => {
     calc.push( 8 );
     expect( calc.median ).toBe( 6 );
   } );
+
+  it( 'should return a median properly (array is fully populated, the first one is the biggest)', () => {
+    const calc = new HistoryPercentileCalculator( 5 );
+    calc.push( 8 );
+    calc.push( 6 );
+    calc.push( 4 );
+    calc.push( 2 );
+    calc.push( 3 );
+    calc.push( 5 );
+    calc.push( 7 );
+    expect( calc.median ).toBeCloseTo( 4 );
+  } );
 } );
