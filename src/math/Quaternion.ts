@@ -83,6 +83,33 @@ export class Quaternion {
   }
 
   /**
+   * The length of this.
+   */
+  public get length(): number {
+    return Math.sqrt( this.x * this.x + this.y * this.y + this.z * this.z + this.w * this.w );
+  }
+
+  /**
+   * A normalized this.
+   */
+  public get normalized(): Quaternion {
+    const l = this.length;
+
+    if ( l === 0 ) {
+      return Quaternion.identity;
+    }
+
+    const lInv = 1.0 / this.length;
+
+    return new Quaternion( [
+      this.x * lInv,
+      this.y * lInv,
+      this.z * lInv,
+      this.w * lInv,
+    ] );
+  }
+
+  /**
    * Multiply two Quaternions.
    * @param q Another Quaternion
    */
