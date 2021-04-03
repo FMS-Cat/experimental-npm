@@ -42,3 +42,18 @@ export function matrix2d( w: number, h: number ): number[] {
   }
   return arr;
 }
+
+/**
+ * See also: {@link matrix2d}
+ */
+export function matrix3d( w: number, h: number, d: number ): number[] {
+  const arr: number[] = [];
+  for ( let iz = 0; iz < d; iz ++ ) {
+    for ( let iy = 0; iy < h; iy ++ ) {
+      for ( let ix = 0; ix < w; ix ++ ) {
+        arr.push( ix, iy, iz );
+      }
+    }
+  }
+  return arr;
+}
