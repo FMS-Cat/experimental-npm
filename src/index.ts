@@ -8,6 +8,7 @@ export * from './FizzBuzz';
 export * from './FMS_Cat';
 export * from './HistoryMeanCalculator';
 export * from './math';
+export * from './Pool';
 export * from './Swap';
 export * from './TapTempo';
 export * from './Xorshift';
